@@ -9,22 +9,13 @@ public class Application {
         new Application().run();
     }
 
-    void run() {
-
+    private void run() {
         System.out.println("Podaj wyraz do enkrypcji");
         String usersText = scanner.nextLine();
         EncryptDecrypt encDec = new EncryptDecrypt(usersText);
 
-
-
-
-
-        System.out.println("Twoje slowo: " + usersText);
-        System.out.println("Zakodowane slowo: " + encDec.getEncryptedWord());
-        System.out.println("Odkodoowane slowo: " + encDec.getDecryptedWord());
+        System.out.println("Twoj tekst: " + usersText);
+        System.out.println("Zakodowany tekst: " + encDec.getEncryptedWord());
+        System.out.println("Odkodoowany tekst: " + encDec.getDecryptedWord());
     }
-
-
-
-
 }

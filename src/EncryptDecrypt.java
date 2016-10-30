@@ -1,7 +1,7 @@
 class EncryptDecrypt {
     EncryptDecrypt(String usersText) {
-        charactersNumbers = new int[characters.length];
-        setCharactersNumber();
+        codedCharactersNumbers = new int[characters.length];
+        setCodedCharactersNumbers();
         this.usersText = usersText;
         encryptedWord = "";
         decryptedWord = "";
@@ -10,30 +10,32 @@ class EncryptDecrypt {
     }
 
     private char[] characters = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'r', 's', 't', 'u', 'w', 'y', 'z'};
-    private int[] charactersNumbers;
+    private int[] codedCharactersNumbers;
 
     private String encryptedWord;
     private String decryptedWord;
     private String usersText;
 
-
-    private void setCharactersNumber() {
-        for (int i = 0; i < charactersNumbers.length; i++) {
-            charactersNumbers[i] = 32 + i;
+    private void setCodedCharactersNumbers() {
+        for (int i = 0; i < codedCharactersNumbers.length; i++) {
+            codedCharactersNumbers[i] = 32 + i;
         }
     }
 
     private void encryptWord() {
         for (int i = 0; i < usersText.length(); i++) {
-            int number = getLettersNumber(usersText.charAt(i));
+            int number = getCodedCharacterNumber(usersText.charAt(i));
             encryptedWord += (char) number;
         }
     }
 
-    private int getLettersNumber(char character) {
+    private int getCodedCharacterNumber(char character) {
         for (int i = 0; i < characters.length; i++) {
             if (character == characters[i]) {
-                return charactersNumbers[i];
+                return codedCharactersNumbers[i];
+            }
+            if((int)character == 32) {
+                return '_';
             }
         }
         System.out.println("cos sie popsulo");
@@ -51,12 +53,15 @@ class EncryptDecrypt {
 
     private char decryptCharacter(int number) {
         for (int i = 0; i < characters.length; i++) {
-            if (number == charactersNumbers[i]) {
+            if (number == codedCharactersNumbers[i]) {
                 return characters[i];
             }
+            if(number == 95) {
+                return '_';
+            }
         }
-        System.out.println("cos sie popsulo");
-        return 'g';
+        System.out.println("popusyta dekrypcha znakow");
+        return '_';
     }
 
     String getEncryptedWord() {

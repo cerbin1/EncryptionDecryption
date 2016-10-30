@@ -38,8 +38,7 @@ class EncryptDecrypt {
                 return '_';
             }
         }
-        System.out.println("cos sie popsulo");
-        return 0;
+        return 120;
     }
 
     private void decryptWord() {
@@ -60,8 +59,7 @@ class EncryptDecrypt {
                 return '_';
             }
         }
-        System.out.println("popusyta dekrypcha znakow");
-        return '_';
+        return 'X';
     }
 
     String getEncryptedWord() {

@@ -3,11 +3,8 @@ import java.util.Scanner;
 public class Application {
 
     private static Scanner scanner = new Scanner(System.in);
+    String usersWord;
 
-    Character[] characters = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'r', 's', 't', 'u', 'w', 'y', 'z'};
-    int[] charactersNumbers = new int[characters.length];
-    String encryptedWord = "";
-    String decryptedWord = "";
 
     public static void main(String[] args) {
         new Application().run();
@@ -15,9 +12,6 @@ public class Application {
 
     void run() {
 
-        for (int i = 0; i < charactersNumbers.length; i++) {
-            charactersNumbers[i] = 32 + i;
-        }
 
         String usersText = scanner.nextLine();
 

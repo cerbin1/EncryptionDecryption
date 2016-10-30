@@ -6,7 +6,6 @@ public class Application {
 
     private static Scanner scanner = new Scanner(System.in);
 
-    List<Character> randomNumbers = new ArrayList<>();
     Character[] characters = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'r', 's', 't', 'u', 'w', 'y', 'z'};
     int[] charactersNumbers = new int[characters.length];
     String encryptedWord = "";
@@ -36,8 +35,6 @@ public class Application {
             decryptedWord += character;
         }
 
-
-        randomNumbers.forEach(System.out::println);
 
         System.out.println("Twoje slowo: " + usersText);
         System.out.println("Zakodowane slowo: " + encryptedWord);

@@ -34,7 +34,7 @@ class EncryptDecrypt {
             if (character == characters[i]) {
                 return codedCharactersNumbers[i];
             }
-            if((int)character == 32) {
+            if ((int) character == 32) {
                 return '_';
             }
         }
@@ -55,7 +55,7 @@ class EncryptDecrypt {
             if (number == codedCharactersNumbers[i]) {
                 return characters[i];
             }
-            if(number == 95) {
+            if (number == 95) {
                 return '_';
             }
         }

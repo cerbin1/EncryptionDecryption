@@ -1,36 +1,36 @@
-public class EncryptDecrypt {
-    public EncryptDecrypt(String usersText) {
+class EncryptDecrypt {
+    EncryptDecrypt(String usersText) {
         charactersNumbers = new int[characters.length];
         setCharactersNumber();
         this.usersText = usersText;
         encryptedWord = "";
         decryptedWord = "";
         encryptWord();
-        decrypeWord();
+        decryptWord();
     }
 
-    char[] characters = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'r', 's', 't', 'u', 'w', 'y', 'z'};
-    int[] charactersNumbers;
+    private char[] characters = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'r', 's', 't', 'u', 'w', 'y', 'z'};
+    private int[] charactersNumbers;
 
-    String encryptedWord;
-    String decryptedWord;
-    String usersText;
+    private String encryptedWord;
+    private String decryptedWord;
+    private String usersText;
 
 
-    void setCharactersNumber() {
+    private void setCharactersNumber() {
         for (int i = 0; i < charactersNumbers.length; i++) {
             charactersNumbers[i] = 32 + i;
         }
     }
 
-    void encryptWord() {
+    private void encryptWord() {
         for (int i = 0; i < usersText.length(); i++) {
             int number = getLettersNumber(usersText.charAt(i));
             encryptedWord += (char) number;
         }
     }
 
-    int getLettersNumber(char character) {
+    private int getLettersNumber(char character) {
         for (int i = 0; i < characters.length; i++) {
             if (character == characters[i]) {
                 return charactersNumbers[i];
@@ -40,7 +40,7 @@ public class EncryptDecrypt {
         return 0;
     }
 
-    void decrypeWord() {
+    private void decryptWord() {
         for (int i = 0; i < usersText.length(); i++) {
             int number = (int) encryptedWord.charAt(i);
             System.out.println(number);
@@ -49,7 +49,7 @@ public class EncryptDecrypt {
         }
     }
 
-    char decryptCharacter(int number) {
+    private char decryptCharacter(int number) {
         for (int i = 0; i < characters.length; i++) {
             if (number == charactersNumbers[i]) {
                 return characters[i];
